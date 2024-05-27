@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="header">
+        <h3>Yours Customers</h3>
+        <a class="filterButton">Filter</a>
+    </div>
+    <div class="table">
+        <div class="table-header">
+            <div class="table-header-cell">Id</div>
+            <div class="table-header-cell">Avatar</div>
+            <div class="table-header-cell">Name</div>
+            <div class="table-header-cell">Last Name</div>
+            <div class="table-header-cell">Email</div>
+            <div class="table-header-cell">Register Date</div>
+        </div>
+
+        <div class="table-row" *ngFor="let client of clients">
+            <div class="table-cell">{{client.id}}</div>
+            <div class="table-cell">
+                <img class="avatar" [src]="client.url" />
+
+            </div>
+            <div class="table-cell">{{client.name}}</div>
+            <div class="table-cell">{{client.lastName}}</div>
+            <div class="table-cell">{{client.email}}</div>
+            <div class="table-cell">{{ client.createAt | date: 'dd/MM/yyyy' }}</div>
+        </div>
+
+    </div>
+
+</div>
